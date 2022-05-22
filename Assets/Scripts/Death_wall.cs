@@ -29,21 +29,33 @@ public class Death_wall : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public void NewGame()
+    public void NewGame() // Используется при проигрыше на уровне чтобы начать его заново
     {
-        if (GameObject.FindGameObjectWithTag("Player"))
+        switch (SceneManager.GetActiveScene().name)
         {
-            SceneManager.LoadScene("Game");
-        }
-        else if (GameObject.FindGameObjectWithTag("Player2"))
-        {
-            SceneManager.LoadScene("Game2");
+            case "Game":
+                SceneManager.LoadScene("Game");
+                break;
+            case "Game2":
+                SceneManager.LoadScene("Game2");
+                break;
+            case "Game3":
+                SceneManager.LoadScene("Game3");
+                break;
         }
     }
 
-    public void Continue()
+    public void Continue() // Используется чтобы перейти на следующий уровень
     {
-        SceneManager.LoadScene("Game2");
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Game":
+                SceneManager.LoadScene("Game2");
+                break;
+            case "Game2":
+                SceneManager.LoadScene("Game3");
+                break;
+        }        
     }
 
     public void OnCollisionEnter(Collision collision)

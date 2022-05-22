@@ -19,6 +19,10 @@ public class Main_menu : MonoBehaviour
     {
         SceneManager.LoadScene("Game2");
     }
+    public void NewGame3()
+    {
+        SceneManager.LoadScene("Game3");
+    }
     //Скрипт, отвечающий за выход из игры
     public void Exit()
     {

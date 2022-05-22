@@ -6,6 +6,8 @@ public class Aircraftcarrier : MonoBehaviour
 {
     public GameObject WinUI;
 
+    public float speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,7 @@ public class Aircraftcarrier : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(-transform.right * Time.deltaTime * speed);
     }
 
     public void OnCollisionEnter(Collision collision)
