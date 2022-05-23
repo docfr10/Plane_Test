@@ -7,6 +7,7 @@ public class Aircraftcarrier : MonoBehaviour
     public GameObject WinUI;
 
     public float speed;
+    public float time;
 
     // Start is called before the first frame update
     void Start()
@@ -16,16 +17,20 @@ public class Aircraftcarrier : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         transform.Translate(-transform.right * Time.deltaTime * speed);
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player2"))
         {
-            WinUI.SetActive(true);
-            Time.timeScale = 0f;
+            time += Time.deltaTime;
+            if (time > 10)
+            {
+                WinUI.SetActive(true);
+                Time.timeScale = 0f;
+            }
         }
     }
 }
