@@ -42,6 +42,9 @@ public class Death_wall : MonoBehaviour
             case "Game3":
                 SceneManager.LoadScene("Game3");
                 break;
+            case "Game4":
+                SceneManager.LoadScene("Game4");
+                break;
         }
     }
 
@@ -55,12 +58,15 @@ public class Death_wall : MonoBehaviour
             case "Game2":
                 SceneManager.LoadScene("Game3");
                 break;
+            case "Game3":
+                SceneManager.LoadScene("Game4");
+                break;
         }        
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Player3"))
         {
             DeadScreenUI.SetActive(true);
             Time.timeScale = 0f;
@@ -69,9 +75,13 @@ public class Death_wall : MonoBehaviour
             {
                 audioSourcePropeller.GetComponent<PlayerController>().audioSourcePropeller.Stop();
             }
-            else
+            else if (GameObject.FindGameObjectWithTag("Player2"))
             {
                 audioSourcePropeller.GetComponent<Control2>().audioSourcePropeller.Stop();
+            }
+            else if (GameObject.FindGameObjectWithTag("Player3"))
+            {
+                //audioSourcePropeller.GetComponent<Control3>().audioSourcePropeller.Stop();
             }
             audioSourceDead.Play();
             Debug.Log("You dead");

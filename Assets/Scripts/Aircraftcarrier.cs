@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Aircraftcarrier : MonoBehaviour
 {
@@ -17,20 +18,25 @@ public class Aircraftcarrier : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
+    {
         transform.Translate(-transform.right * Time.deltaTime * speed);
     }
 
     public void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player2"))
+        switch (SceneManager.GetActiveScene().name)
         {
-            time += Time.deltaTime;
-            if (time > 10)
-            {
-                WinUI.SetActive(true);
-                Time.timeScale = 0f;
-            }
+            case "Game3":
+                if (collision.gameObject.CompareTag("Player2"))
+                {
+                    time += Time.deltaTime;
+                    if (time > 10)
+                    {
+                        WinUI.SetActive(true);
+                        Time.timeScale = 0f;
+                    }
+                }
+                break;
         }
     }
 }
