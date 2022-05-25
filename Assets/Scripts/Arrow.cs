@@ -8,7 +8,6 @@ public class Arrow : MonoBehaviour
 {
     public Image pointArrow;
     public Transform[] waypoints;
-    Transform q;
 
     public Camera cam;
 

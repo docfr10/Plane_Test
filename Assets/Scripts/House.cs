@@ -27,7 +27,7 @@ public class House : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bomb"))
         {
-            house.SetActive(false);
+            Destroy(house);
             house2.SetActive(true);
             cam1.enabled = false;
             cam2.enabled = true;
