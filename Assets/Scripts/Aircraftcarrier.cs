@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Aircraftcarrier : MonoBehaviour
 {
+    [SerializeField] Canvas _canvas;
+
     public GameObject WinUI;
 
     public float speed;
@@ -35,6 +37,7 @@ public class Aircraftcarrier : MonoBehaviour
                         WinUI.SetActive(true);
                         Time.timeScale = 0f;
                     }
+                    _canvas.enabled = false;
                 }
                 break;
         }

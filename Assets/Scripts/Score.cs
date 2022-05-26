@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // ласс, отвечающий за отображение счета
+
 public class Score : MonoBehaviour
 {
+    [SerializeField] Canvas _canvas;
     public GameObject WinUI;
     //—чет игрока
     public static int scoreAmount;
@@ -28,6 +30,7 @@ public class Score : MonoBehaviour
         if (scoreAmount == 1200)
         {
             WinUI.SetActive(true);
+            _canvas.enabled = false;
             Time.timeScale = 0f;
             Debug.Log("YOU WIN!");
         }
