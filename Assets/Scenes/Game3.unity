@@ -2906,6 +2906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84aad72cf85a40a4a985e1b25f4ada79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 1762274903}
   WinUI: {fileID: 324552736}
   speed: 10
   time: 0
@@ -4218,6 +4219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f2556d7b38aa84d8daf8442cd4f848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 0}
   WinUI: {fileID: 324552736}
 --- !u!114 &1391139484
 MonoBehaviour:
@@ -19014,6 +19016,17 @@ ParticleSystem:
     radiusScale: 1
     primitives: []
   SubModule:
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 500000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
     serializedVersion: 2
     enabled: 0
     subEmitters:
@@ -20019,7 +20032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

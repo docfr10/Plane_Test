@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class House : MonoBehaviour
 {
+    [SerializeField] Canvas _canvas;
     public GameObject house, house2;//Нормальный и разрушенный дома
     public Camera cam1, cam2;
     public GameObject WinUI;
@@ -33,6 +34,7 @@ public class House : MonoBehaviour
             cam2.enabled = true;
             WinUI.SetActive(true);
             Time.timeScale = 0f;
+            _canvas.enabled = false;
         }
         else
         {

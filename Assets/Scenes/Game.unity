@@ -4209,7 +4209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -4701,7 +4701,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 500000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -5657,6 +5657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f2556d7b38aa84d8daf8442cd4f848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 1169803332}
   WinUI: {fileID: 285697180}
 --- !u!1 &1642335918
 GameObject:
